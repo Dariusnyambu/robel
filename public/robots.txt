@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://robel-consulting.example.com/sitemap.xml

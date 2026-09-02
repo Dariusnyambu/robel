@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper text-ink font-sans antialiased;
+}
+
+::selection {
+  @apply bg-ember-100 text-ink;
+}
+
+:focus-visible {
+  outline: 2px solid #1554D1;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+}
+
+.eyebrow {
+  @apply inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-royal-600;
+}
+
+.eyebrow::before {
+  content: "";
+  @apply h-[6px] w-[6px] rounded-full bg-ember;
+}
+
+.section-heading {
+  @apply font-serif text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.1] tracking-tight text-ink;
+}
+
+.card-base {
+  @apply rounded-2xl border border-black/[0.06] bg-white shadow-card;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-ember-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lift transition-all duration-200 hover:bg-ember-700 hover:-translate-y-0.5 active:translate-y-0;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-verdant-600 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-verdant-700 hover:-translate-y-0.5 active:translate-y-0;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-royal-200 bg-white px-6 py-3.5 text-sm font-semibold text-royal-700 transition-all duration-200 hover:bg-royal-50 hover:-translate-y-0.5 active:translate-y-0;
+}
+
+.input-field {
+  @apply w-full rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm text-ink placeholder:text-ink/35 transition-colors focus:border-royal-600 focus:bg-white focus:outline-none;
+}
+
+.fade-up {
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
