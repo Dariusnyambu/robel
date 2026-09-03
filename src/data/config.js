@@ -11,12 +11,14 @@ export const brand = {
 export const siteUrl = "https://robel-consulting.example.com";
 
 export const contact = {
-  phone: "0703 177 941",
-  phoneLink: "tel:+254703177941",
-  whatsapp: "0703 177 941",
-  whatsappLink: "https://wa.me/254703177941",
-  email: "writerhelp8@gmail.com",
-  emailLink: "mailto:writerhelp8@gmail.com",
+  phone: "+254 181 392445",
+  phoneLink: "tel:+254181392445",
+  whatsapp: "+254 181 392445",
+  whatsappLink: "https://wa.me/254181392445",
+  email: "info@robelconsulting.co.ke",
+  emailLink: "mailto:info@robelconsulting.co.ke",
+  secondaryEmail: "writerhelp8@gmail.com",
+  secondaryEmailLink: "mailto:writerhelp8@gmail.com",
   location: "Jewel Complex, Roysambu",
   hours: "Available 24/7",
 };

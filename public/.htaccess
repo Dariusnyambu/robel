@@ -1,0 +1,20 @@
+# Ensures React Router client-side routes (e.g. /about, /services, /pricing,
+# /contact) resolve correctly on refresh or direct visit, instead of 404ing.
+# Required on Apache/LiteSpeed hosts such as Hostinger — Vercel uses vercel.json
+# instead, which already handles this for that platform.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Let real files and folders (js, css, images, etc.) be served as-is
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Everything else falls back to index.html so React Router can take over
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Fallback for environments without mod_rewrite enabled
+ErrorDocument 404 /index.html

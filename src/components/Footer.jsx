@@ -115,6 +115,11 @@ export default function Footer() {
                 {contact.email}
               </a>
             </li>
+            <li>
+              <a href={contact.secondaryEmailLink} className="hover:text-ember-500">
+                {contact.secondaryEmail}
+              </a>
+            </li>
             <li>{contact.location}</li>
             <li>{contact.hours}</li>
           </ul>

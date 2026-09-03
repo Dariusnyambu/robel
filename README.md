@@ -40,3 +40,9 @@ before launch.
 
 Ready for Vercel — `vercel.json` includes an SPA rewrite so client-side routes
 (`/about`, `/services`, `/pricing`, `/contact`) resolve correctly. Framework preset: Vite.
+
+**Hostinger (or any Apache/LiteSpeed shared hosting):** upload the contents of `dist/`
+(after running `npm run build`) to `public_html/`. The build includes an `.htaccess` file
+that rewrites all routes to `index.html`, so refreshing or directly visiting a page like
+`/about` won't 404. Make sure `.htaccess` actually uploaded — some FTP clients hide
+dotfiles by default, so enable "show hidden files" before uploading.

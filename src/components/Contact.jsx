@@ -8,6 +8,7 @@ const contactDetails = [
   { icon: Phone, label: "Phone", value: contact.phone, href: contact.phoneLink },
   { icon: MessageCircle, label: "WhatsApp", value: contact.whatsapp, href: contact.whatsappLink },
   { icon: Mail, label: "Email", value: contact.email, href: contact.emailLink },
+  { icon: Mail, label: "Email (alt)", value: contact.secondaryEmail, href: contact.secondaryEmailLink },
   { icon: MapPin, label: "Location", value: contact.location },
   { icon: Clock3, label: "Working Hours", value: contact.hours },
 ];
