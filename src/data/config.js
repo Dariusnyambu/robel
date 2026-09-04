@@ -14,7 +14,8 @@ export const contact = {
   phone: "+254 181 392445",
   phoneLink: "tel:+254181392445",
   whatsapp: "+254 181 392445",
-  whatsappLink: "https://wa.me/254181392445",
+  whatsappLink:
+    "https://wa.me/254181392445?text=Hello%20Robel%20Consulting%2C%20I%20would%20like%20to%20inquire%20about%20your%20research%20services.",
   email: "info@robelconsulting.co.ke",
   emailLink: "mailto:info@robelconsulting.co.ke",
   secondaryEmail: "writerhelp8@gmail.com",
