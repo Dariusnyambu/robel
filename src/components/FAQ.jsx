@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Plus } from "lucide-react";
 import { faqs } from "../data/content";
 import Reveal from "./Reveal";
@@ -31,6 +31,24 @@ function Item({ faq, open, onToggle }) {
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
+
+  // FAQPage structured data — helps FAQ content surface as rich results in search.
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "faq-schema";
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    });
+    document.head.appendChild(script);
+    return () => script.remove();
+  }, []);
 
   return (
     <section className="bg-mist py-20 sm:py-28" id="faqs">

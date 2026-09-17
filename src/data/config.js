@@ -8,7 +8,7 @@ export const brand = {
 
 // Replace with the live domain once the site is deployed — used for canonical URLs,
 // the sitemap, and structured data. Update this before going live.
-export const siteUrl = "https://robel-consulting.example.com";
+export const siteUrl = "https://robelconsulting.co.ke";
 
 export const contact = {
   phone: "+254 181 392445",

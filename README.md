@@ -27,14 +27,15 @@ Search the codebase for bracketed placeholders and replace with real values:
 `[INSTAGRAM URL]`, `[LINKEDIN URL]`, `[X URL]`, `[FACEBOOK URL]`, and the `[CLIENT NAME]` /
 testimonial placeholders in `src/data/content.js`.
 
-**Before deploying**, update `siteUrl` in `src/data/config.js` (currently a placeholder
-`https://robel-consulting.example.com`) to the real domain, and update the matching URLs in
-`index.html` (canonical, Open Graph, Twitter, JSON-LD), `public/robots.txt`, and
-`public/sitemap.xml` to match.
+**SEO note:** `siteUrl` in `src/data/config.js` is set to `https://robelconsulting.co.ke`
+(inferred from the business email domain). If the live site is actually hosted at a
+different domain or subdomain (e.g. `www.robelconsulting.co.ke`), update it there, plus the
+matching URLs in `index.html` (canonical, Open Graph, Twitter, JSON-LD), `public/robots.txt`,
+and `public/sitemap.xml`.
 
-The contact form and quote calculator currently show a client-side confirmation state only —
-wire them up to your backend/email service of choice (e.g. Formspree, Supabase, or a simple API route)
-before launch.
+The contact form submits via formsubmit.co directly to the email in `formEndpoint`
+(`src/data/config.js`). The first submission to a new address requires a one-time
+confirmation click from that inbox before it starts forwarding live submissions.
 
 ## Deployment
 
